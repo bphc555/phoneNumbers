@@ -5,7 +5,7 @@ from os.path import isfile
 def getPhone(name):
 	f = open(name,'r')
 	fileText = f.read()
-	tofind = re.compile("\D([0]?\d{10})\D") #phone numbers like 09874563210 or 9874563210 or 91-9874563210
+	tofind = re.compile("\D([0]?[7-9]\d{9})\D") #phone numbers like 09874563210 or 9874563210 or 91-9874563210
 	match = re.findall(tofind,fileText)
 	for u in match:
 		print  str(u)
