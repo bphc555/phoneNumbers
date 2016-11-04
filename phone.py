@@ -10,7 +10,7 @@ def getPhone(name):
 	for u in match:
 		print  str(u)
 	
-	tofind2 = re.compile("\D(91\d{10})\D") #phone numbers like 919874563210
+	tofind2 = re.compile("\D(91[7-9]\d{9})\D") #phone numbers like 919874563210
 	match = re.findall(tofind2,fileText)
 	for u in match:
 		print  str(u)
