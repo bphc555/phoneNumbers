@@ -11,12 +11,19 @@ def getPhone(name):
 		print "+91-" + str(u)
 
 
-directory = '/home/sonal/Desktop/myDir'
+#directory = '/home/sonal/Desktop/myDir'
 
 def recurse(dirName):
 	for subdir, dirs, files in os.walk(dirName):
-		for file in files:
-		 	path = os.path.join(subdir, file)
+		for fileName in files:
+		 	path = os.path.join(subdir, fileName)
 			getPhone(path)
 
-recurse(directory)
+def main():
+	print "Enter the path to your directory"
+	directory = raw_input()
+	print "you entered - " + directory
+	print "The phone numbers found are: "
+	recurse(directory)
+
+main()
