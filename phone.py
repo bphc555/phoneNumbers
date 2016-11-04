@@ -5,14 +5,16 @@ from os.path import isfile
 def getPhone(name):
 	f = open(name,'r')
 	fileText = f.read()
-	#tofind = re.compile('\d\d\d\d\d\d\d\d\d\d\D')
-	tofind = re.compile("\D(\d{10})\D")
+	tofind = re.compile("\D([0]?\d{10})\D") #phone numbers like 09874563210 or 9874563210 or 91-9874563210
 	match = re.findall(tofind,fileText)
 	for u in match:
-		if len(u) > 10:
-			continue
-		print "+91-" + str(u)
-
+		print  str(u)
+	
+	tofind2 = re.compile("\D(91\d{10})\D") #phone numbers like 919874563210
+	match = re.findall(tofind2,fileText)
+	for u in match:
+		print  str(u)
+	
 
 #directory = '/home/sonal/Desktop/myDir'
 
